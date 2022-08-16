@@ -5,7 +5,7 @@ class CategoryList extends Component {
     render() {
         return (
             <div>
-                <b3>{this.props.title}</b3>
+                <b3>{this.props.info.title}</b3>
                 <ListGroup>
                     <ListGroupItem>OZAN</ListGroupItem>
                     <ListGroupItem>HALİS</ListGroupItem>
