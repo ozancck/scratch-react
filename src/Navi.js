@@ -10,7 +10,8 @@ import {
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem } from 'reactstrap';
+    DropdownItem
+} from 'reactstrap';
 
 export default class Navi extends React.Component {
     constructor(props) {
@@ -21,17 +22,19 @@ export default class Navi extends React.Component {
             isOpen: false
         };
     }
+
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen
         });
     }
+
     render() {
         return (
             <div>
                 <Navbar color="light" light expand="md">
                     <NavbarBrand href="/">Northwind App</NavbarBrand>
-                    <NavbarToggler onClick={this.toggle} />
+                    <NavbarToggler onClick={this.toggle}/>
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
@@ -51,7 +54,7 @@ export default class Navi extends React.Component {
                                     <DropdownItem>
                                         Option 2
                                     </DropdownItem>
-                                    <DropdownItem divider />
+                                    <DropdownItem divider/>
                                     <DropdownItem>
                                         Reset
                                     </DropdownItem>
