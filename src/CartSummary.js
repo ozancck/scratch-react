@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown} from "reactstrap";
+import {Badge, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown} from "reactstrap";
 
 class CartSummary extends Component {
     render() {
@@ -7,13 +7,14 @@ class CartSummary extends Component {
             <div>
                 <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
-                        Options - {this.props.cart.length}
+                        Your Cart - {this.props.cart.length}
                     </DropdownToggle>
                     <DropdownMenu right>
                         {
                             this.props.cart.map(cartItem => (
-                                <DropdownItem>
+                                <DropdownItem key={cartItem.product.id}>
                                     {cartItem.product.productName}
+                                    <Badge color="success">{cartItem.quantity}> </Badge>
                                 </DropdownItem>
                             ))
                         }
