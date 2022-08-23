@@ -47,6 +47,7 @@ export default class App extends Component {
             <div>
                 <Container>
                     <Navi cart={this.state.cart}/>
+                    <cartSummary/>
                     <Row>
                         <Col xs="9">
                             <ProductList
