@@ -28,7 +28,6 @@ export default class App extends Component {
             .then(data => this.setState({products: data}))
     }
 
-
     addToCart = (product) => {
         let newCart = this.state.cart;
 
@@ -42,7 +41,11 @@ export default class App extends Component {
 
         this.setState({cart: newCart})
 
+    }
 
+    removeFromCart = (product) => {
+        let newCart = this.state.cart.filter(c => c.product.id !== product.id)
+        this.setState({cart: newCart})
     }
 
     render() {
@@ -51,7 +54,7 @@ export default class App extends Component {
         return (
             <div>
                 <Container>
-                    <Navi cart={this.state.cart}/>
+                    <Navi removeFromCart={this.removeFromCart} cart={this.state.cart}/>
                     <cartSummary/>
                     <Row>
                         <Col xs="9">
